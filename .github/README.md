@@ -1,3 +1,12 @@
+# Disclosure
+In this fork you can find a functional NvChad setup for rust.
+
+
+This was done following the steps shown in: https://youtu.be/mh_EJhH49Ms?si=0ERyJVWoEh2al44O
+
+
+and updated as instructed on: https://github.com/dreamsofcode-io/neovim-rust.git 
+
 <h1 align="center">NvChad</h1>
 
 <div align="center">

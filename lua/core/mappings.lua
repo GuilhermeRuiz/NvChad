@@ -465,4 +465,22 @@ M.gitsigns = {
   },
 }
 
+M.dap = {
+  n = {
+    ["<F4>"] = {"<ESC><cmd>lua require('dap').toggle_breakpoint()<CR>", "Toggles breakpoint"},
+    ["<F5>"] = {"<ESC><cmd>lua require('dap').step_over()<CR>", "Toggles breakpoint"},
+    ["<F6>"] = {"<ESC><cmd>lua require('dap').step_into()<CR>", "Toggles breakpoint"},
+    ["<F8>"] = {"<ESC><cmd>lua require('dap').repl.open()<CR>", "Toggles breakpoint"},
+    ["<F9>"] = {"<ESC><cmd>lua require('dap').continue()<CR>", "Toggles breakpoint"},
+    ["<leader>dus"] = {
+      function ()
+        local widgets = require('dap.ui.widgets');
+        local sidebar = widgets.sidebar(widgets.scopes);
+        sidebar.open();
+      end,
+      "Open debugging sidebar"
+    }
+  },
+}
+
 return M
