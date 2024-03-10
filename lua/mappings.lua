@@ -19,10 +19,10 @@ map("n", "<leader>dus",
     local sidebar = widgets.sidebar(widgets.scopes);
     sidebar.open();
   end,
-  { desc = "Toggle DAP Open debugging sidebar" })
+  { desc = "DAP Open debugging sidebar" })
 
-map("n", "<F4>", "<ESC><cmd>lua require('dap').toggle_breakpoint()<CR>", { desc = "Toggle DAP breakpoint" })
-map("n", "<F5>", "<ESC><cmd>lua require('dap').step_over()<CR>", { desc = "Toggle DAP step over" })
-map("n", "<F6>", "<ESC><cmd>lua require('dap').step_into()<CR>", { desc = "Toggle DAP step into" })
-map("n", "<F8>", "<ESC><cmd>lua require('dap').repl.open()<CR>", { desc = "Toggle DAP repl" })
-map("n", "<F9>", "<ESC><cmd>lua require('dap').continue()<CR>", { desc = "Toggle DAP continue" })
+map("n", "<F4>", "<ESC><cmd>lua require('dap').toggle_breakpoint()<CR>", { desc = "DAP breakpoint" })
+map("n", "<F5>", "<ESC><cmd>lua require('dap').step_over()<CR>", { desc = "DAP step over" })
+map("n", "<F6>", "<ESC><cmd>lua require('dap').step_into()<CR>", { desc = "DAP step into" })
+map("n", "<F8>", "<ESC><cmd>lua require('dap').repl.open()<CR>", { desc = "DAP repl" })
+map("n", "<F9>", "<ESC><cmd>lua require('dap').continue()<CR>", { desc = "DAP continue" })
