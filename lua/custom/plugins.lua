@@ -16,9 +16,6 @@ local plugins = {
  },
   {
     "mfussenegger/nvim-dap",
-    init = function()
-      require("core.utils").load_mappings("dap")
-    end
   },
   {
     'saecki/crates.nvim',
@@ -30,7 +27,6 @@ local plugins = {
         sources = { { name = "crates" }}
       })
       crates.show()
-      require("core.utils").load_mappings("crates")
     end,
   },
   {
@@ -50,7 +46,7 @@ local plugins = {
   {
     "hrsh7th/nvim-cmp",
     opts = function()
-      local M = require "plugins.configs.cmp"
+      local M = require "nvchad.configs.cmp"
       M.completion.completeopt = "menu,menuone,noselect"
       M.mapping["<CR>"] = cmp.mapping.confirm {
         behavior = cmp.ConfirmBehavior.Insert,
