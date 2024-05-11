@@ -61,15 +61,15 @@ M.ui = {
     },
   },
 
-  cheatsheet = { theme = "grid" }, -- simple/grid
-
-  lsp = {
-    signature = true,
-    semantic_tokens = false,
+  cheatsheet = {
+    theme = "grid", -- simple/grid
+    excluded_groups = { "terminal (t)", "autopairs", "Nvim" }, -- can add group name or with mode
   },
 
+  lsp = { signature = true },
+
   term = {
-    -- hl = "Normal:term,WinSeparator:WinSeparator",
+    hl = "Normal:term,WinSeparator:WinSeparator",
     sizes = { sp = 0.3, vsp = 0.2 },
     float = {
       relative = "editor",

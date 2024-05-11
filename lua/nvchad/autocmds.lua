@@ -21,17 +21,16 @@ autocmd("BufWritePost", {
     local module = string.gsub(fp, "^.*/" .. app_name .. "/lua/", ""):gsub("/", ".")
 
     require("plenary.reload").reload_module "nvconfig"
+    require("plenary.reload").reload_module "chadrc"
     require("plenary.reload").reload_module "base46"
     require("plenary.reload").reload_module(module)
 
     local config = require "nvconfig"
 
     -- statusline
-    if config.ui.statusline.theme ~= "custom" then
-      require("plenary.reload").reload_module("nvchad.stl.utils")
-      require("plenary.reload").reload_module("nvchad.stl." .. config.ui.statusline.theme)
-      vim.opt.statusline = "%!v:lua.require('nvchad.stl." .. config.ui.statusline.theme .. "')()"
-    end
+    require("plenary.reload").reload_module "nvchad.stl.utils"
+    require("plenary.reload").reload_module("nvchad.stl." .. config.ui.statusline.theme)
+    vim.opt.statusline = "%!v:lua.require('nvchad.stl." .. config.ui.statusline.theme .. "')()"
 
     -- tabufline
     if config.ui.tabufline.enabled then
@@ -45,7 +44,7 @@ autocmd("BufWritePost", {
 })
 
 -- user event that loads after UIEnter + only if file buf is there
-vim.api.nvim_create_autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
+autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
   group = vim.api.nvim_create_augroup("NvFilePost", { clear = true }),
   callback = function(args)
     local file = vim.api.nvim_buf_get_name(args.buf)

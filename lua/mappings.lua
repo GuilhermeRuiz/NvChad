@@ -26,3 +26,17 @@ map("n", "<F5>", "<ESC><cmd>lua require('dap').step_over()<CR>", { desc = "DAP s
 map("n", "<F6>", "<ESC><cmd>lua require('dap').step_into()<CR>", { desc = "DAP step into" })
 map("n", "<F8>", "<ESC><cmd>lua require('dap').repl.open()<CR>", { desc = "DAP repl" })
 map("n", "<F9>", "<ESC><cmd>lua require('dap').continue()<CR>", { desc = "DAP continue" })
+
+local buffer = vim.api.nvim_get_current_buf()
+-- -- Code navigation and shortcuts
+-- vim.keymap.set("n", "<c-]>", vim.lsp.buf.definition, keymap_opts)
+map("n", "<c-]>", vim.lsp.buf.definition, { desc = "LSP go to definition", buffer = buffer })
+-- vim.keymap.set("n", "K", vim.lsp.buf.hover, keymap_opts)
+-- vim.keymap.set("n", "gD", vim.lsp.buf.implementation, keymap_opts)
+map("n", "gD", vim.lsp.buf.implementation, { desc = "LSP go to implementation", buffer= buffer })
+-- vim.keymap.set("n", "<c-k>", vim.lsp.buf.signature_help, keymap_opts)
+-- vim.keymap.set("n", "1gD", vim.lsp.buf.type_definition, keymap_opts)
+-- vim.keymap.set("n", "gr", vim.lsp.buf.references, keymap_opts)
+-- vim.keymap.set("n", "g0", vim.lsp.buf.document_symbol, keymap_opts)
+-- vim.keymap.set("n", "gW", vim.lsp.buf.workspace_symbol, keymap_opts)
+-- vim.keymap.set("n", "gd", vim.lsp.buf.definition, keymap_opts)
